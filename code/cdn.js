@@ -308,4 +308,24 @@ e.AES=t._createHelper(r)}()
 
 class _ng {
   use(id,enc) {
+    this.id = id;
+    this.enc = enc;
+    this.ngio = new Newgrounds.io.core(id, enc);
+  }
   
+  unlock(id) {
+    this.ngio.callComponent("Medal.getList", {}, (res)=>{
+      let medals = res.medals;
+      for (var i = 0; i < medals.length; i++) {
+        medal = medals[i];
+        if (medal.id == id) {
+          this.ngio.callComponent('Medal.unlock', {id:medal.id}, ()=>{})
+        }
+    }})
+  }
+}
+
+
+
+
+                       
