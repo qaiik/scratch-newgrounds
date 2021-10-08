@@ -325,6 +325,7 @@ class _ng {
   }
 }
 
+let ng = new _ng();
 
 
 
