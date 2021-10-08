@@ -317,7 +317,7 @@ class _ng {
     this.ngio.callComponent("Medal.getList", {}, (res)=>{
       let medals = res.medals;
       for (var i = 0; i < medals.length; i++) {
-        medal = medals[i];
+        let medal = medals[i];
         if (medal.id == id) {
           this.ngio.callComponent('Medal.unlock', {id:medal.id}, ()=>{})
         }
